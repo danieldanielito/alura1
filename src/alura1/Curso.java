@@ -2,12 +2,14 @@ package alura1;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 public class Curso implements Comparable<Curso>{
 
 	private String nombre;
 	private int tiempo;
-	private Collection <Alumno> alumno= new HashSet<>();
+	private Collection <Alumno> alumno= new HashSet();
+	//private Collection <Alumno> alumno= new LinkedHashSet();
 	
 	public Curso(String nombre, int tiempo) {
 		this.nombre = nombre;

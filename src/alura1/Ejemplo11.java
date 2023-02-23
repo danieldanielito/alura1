@@ -1,9 +1,8 @@
 package alura1;
 
-import java.util.Collection;
-import java.util.HashSet;
+import java.util.Iterator;
 
-public class Ejemplo10 {
+public class Ejemplo11 {
 	public static void main(String[] args) {
 
 		Alumno alumno1 = new Alumno("luis miguel","001");
@@ -36,6 +35,12 @@ public class Ejemplo10 {
 	System.out.println(curso1.getAlumno().contains(alu));
 	System.out.println("verificar alumno es como contains, "+curso1.verificarAlumno(alu));
 	System.out.println(curso1);
+	curso1.getAlumno().forEach(alumno->System.out.println(alumno));
+	System.out.println("------------------------------------------------------------------");
+	Iterator<Alumno> listAlu = curso1.getAlumno().iterator();
+	while(listAlu.hasNext()) {
+		System.out.println(listAlu.next());
+	}
 	}
 
 }
