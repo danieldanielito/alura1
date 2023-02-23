@@ -1,8 +1,10 @@
 package alura1;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.Map;
 
 public class Curso implements Comparable<Curso>{
 
@@ -10,6 +12,7 @@ public class Curso implements Comparable<Curso>{
 	private int tiempo;
 	private Collection <Alumno> alumno= new HashSet();
 	//private Collection <Alumno> alumno= new LinkedHashSet();
+	private Map<String,Alumno>alumnoMap=  new HashMap();
 	
 	public Curso(String nombre, int tiempo) {
 		this.nombre = nombre;
@@ -36,6 +39,7 @@ public class Curso implements Comparable<Curso>{
 
 	public void addAlumno(Alumno alumno) {
 		this.alumno.add(alumno);
+		this.alumnoMap.put(alumno.getCodigo(), alumno);
 	}
 	public boolean verificarAlumno(Alumno alumno) {
 		return this.alumno.contains(alumno);
@@ -44,6 +48,11 @@ public class Curso implements Comparable<Curso>{
 
 	public Collection<Alumno> getAlumno() {
 		return alumno;
+	}
+	
+
+	public Map<String, Alumno> getAlumnoMap() {
+		return alumnoMap;
 	}
 
 	@Override
